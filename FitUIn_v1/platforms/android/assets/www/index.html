@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>FitUIn</title>
+    </head>
+    <body class="col-xs-12" style="padding:0px;">
+		<!--
+			Document Section:	HEADER
+			Description:
+				This is the DOCUMENT_HEADER section. This section is where the banner 
+				of the document is displayed. The content of this section varies, 
+				depending on whether the user is logged in. In cases where login 
+				variables are set, the HEADER will contain a settings section, where 
+				the user can route to pages. This section will always contain the title 
+				of the application: FitUIn.
+		-->
+		<section id="DOCUMENT_HEADER" class="col-xs-12">
+			<!--
+				Header Component:	MENU
+				Description:
+					This div contains the button to open the user menu. It is only 
+					displayed when a user is logged in. For formatting, the outside is 
+					allowed to persist, while the internal markup is hidden.
+			-->
+			<div id="HEADER_MENU" class="col-xs-2"></div>
+			<!--
+				Header Component:	TITLE
+				Description:
+					The header contains the title of the application: FitUIn. It is 
+					always displayed, regardless as to whether a user is logged in.
+			-->
+			<h4 id="HEADER_TITLE" class="col-xs-8">FitUIn</h4>
+			<!--
+				Header Component:	REGISTRATION
+				Description:
+					This label contains the registration link. It directs to user to 
+					the account and profile creation pages. It is only displayed when 
+					there is no user logged on.
+			-->
+			<label id="HEADER_REGISTRATION" class="col-xs-2">Register?</label>
+		</section>
+		<!--
+			Document Section:	BODY
+			Description:
+				This is the DOCUMENT_BODY section. This section is where the content 
+				of the document is displayed. The content of this section varies, 
+				depending on both whether a user is logged in, and then the section 
+				varies even more depending on the type of user account that is logged 
+				in. All application functionality is encapsulated within this section.
+		-->
+		<section id="DOCUMENT_BODY" class="col-xs-12">
+			<!--
+				Page:			DEFAULT
+				Description:
+					This is the DEFAULT page of the application. This page will 
+					contain a loading icon, as well as a message to notify that the 
+					application is ready. Here is where localStorage and cookies will 
+					be checked, and the user will be automatically logged on, if able.
+			-->
+			<div id="PAGE_DEFAULT" class="col-xs-12">
+				<h4>Loading application...</h4>
+			</div>
+			<!--
+				Page:			LOGIN
+				Description:
+					This is the LOGIN page of the application. This page will contain 
+					the necessary inputs for user login, as well as the ability to 
+					route users to the correct page in order to create an account. 
+					Here is where general user information is loaded upon successful 
+					login.
+			-->
+			<div id="PAGE_LOGIN" class="col-xs-12">
+				<section class="col-xs-2"></section>
+				<section id="LOGIN_MENU" class="col-xs-8">
+					<section class="login_upper">
+					<h5>Login to our app.</h5>
+					<p>Enter your username and password to log on.</p>
+					</section>
+					<section class="login_lower">
+						<span id="LOGIN_hidden_uError" class="col-xs-12 input_error_message">Invalid Username!</span>
+						<input id="LOGIN_Username" class="col-xs-12" type="text" placeholder="Username..."/>
+						<span id="LOGIN_hidden_pError" class="col-xs-12 input_error_message">Invalid Password!</span>
+						<input id="LOGIN_Password" class="col-xs-12" type="password" placeholder="Password..."/>
+						<input id="LOGIN_Submit" class="col-xs-12 btn btn-success" type="button" value="Submit"/>
+					</section>
+				</section>
+			</div>
+			<!--
+				Page:			PROFILE_SETUP
+				Description:
+					This is the PROFILE_SETUP page of the application. This page will 
+					contain the user flow for creating an account and setting up a 
+					profile on the application. At the end of the flow user 
+					information is queried from the database, and non-sensitive 
+					information is stored locally for convenience.
+			-->
+			<div id="PAGE_PROFILE_SETUP" class="col-xs-12">
+				<section class="col-xs-2"></section>
+				<section id="PROFILE_SETUP_MENU" class="col-xs-8">
+					<div id="SETUP_MENU_ACCOUNT" class="col-xs-12">
+						<section class="account_upper">
+							<h5>Create your account.</h5>
+							<p>Input account details below to begin the account creation process.</p>
+						</section>
+						<section class="account_lower">
+							<span class="col-xs-12 account_label">Username:</span>
+							<span id="ACCOUNT_hidden_uError" class="col-xs-12 input_error_message">Invalid Username!</span>
+							<span id="ACCOUNT_hidden_uError2" class="col-xs-12 input_error_message">Username already exists! Please input another username.</span>
+							<input id="ACCOUNT_Username" class="" type="text" placeholder="Username..."/>
+							<span class="col-xs-12 account_label">Password:</span>
+							<span id="ACCOUNT_hidden_pError" class="col-xs-12 input_error_message">Invalid Password!</span>
+							<input id="ACCOUNT_Password" class="" type="password" placeholder="Password..."/>
+							<span id="ACCOUNT_hidden_pError2" class="col-xs-12 input_error_message">Passwords don't match!</span>
+							<input id="ACCOUNT_Password2" class="" type="password" placeholder="Re-type password..."/>
+							<span class="col-xs-12 account_label">Name:</span>
+							<span id="ACCOUNT_hidden_nError" class="col-xs-12 input_error_message">Invalid Name!</span>
+							<input id="ACCOUNT_NameFirst" class="col-xs-6" type="text" placeholder="First name..."/>
+							<input id="ACCOUNT_NameLast" class="col-xs-6" type="text" placeholder="Last name..."/>
+							<span class="col-xs-12 account_label">Email:</span>
+							<span id="ACCOUNT_hidden_eError" class="col-xs-12 input_error_message">Invalid Email!</span>
+							<span id="ACCOUNT_hidden_eError2" class="col-xs-12 input_error_message">Email already exists! Please input another email.</span>
+							<input id="ACCOUNT_Email" class="col-xs-12" type="text" placeholder="Email address..."/>
+							<span class="col-xs-12 account_label">Phone Number:</span>
+							<span id="ACCOUNT_hidden_phError" class="col-xs-12 input_error_message">Invalid Phone Number!</span>
+							<input id="ACCOUNT_Phone" class="col-xs-12" type="text" placeholder="Phone number..."/>
+							<span class="col-xs-12 account_label">Gender:</span>
+							<span id="ACCOUNT_hidden_gError" class="col-xs-12 input_error_message">Invalid Gender!</span>
+							<select id="ACCOUNT_Gender" class="browser-default">
+								<option value="0">Male</option>
+								<option value="1">Female</option>
+								<option value="2">Other</option>
+							</select>
+							<span class="col-xs-12 account_label">Account Type:</span>
+							<span id="ACCOUNT_hidden_atError" class="col-xs-12 input_error_message">Invalid Account Type!</span>
+							<select id="ACCOUNT_Type" class="browser-default">
+								<option value="0">User</option>
+								<option value="1">Instructor</option>
+								<option value="2">Company</option>
+							</select>
+							<input id="ACCOUNT_Submit" class="col-xs-12 btn btn-success" type="button" value="Submit"/>
+						</section>
+					</div>
+					<div id="SETUP_MENU_PROFILE" class="col-xs-12">
+						<section class="profile_upper">
+							<h5>Create your profile.</h5>
+							<p>Input profile information below to finalize your account.</p>
+						</section>
+						<section class="profile_lower">
+							<div id="MENU_PROFILE_USER" class="col-xs-12">
+								<span class="col-xs-12 profile_label">Fitness Goals:</span>
+								<section id="PROFILE_USER_FITNESSGOAL" class="col-xs-12"></section>
+								<input id="PROFILE_AddGoal" class="btn btn-default col-xs-12" type="button" value="+ Add Fitness Goal"/>
+							</div>
+							<div id="MENU_PROFILE_INSTRUCTOR" class="col-xs-12">
+								<span class="col-xs-12 profile_label">Description:</span>
+								<textarea id="PROFILE_Description" class="col-xs-12"></textarea>
+								<span class="col-xs-12 profile_label">Qualifications:</span>
+								<section id="PROFILE_USER_QUALIFICATIONS"></section>
+								<input id="PROFILE_AddQualification" class="btn btn-default col-xs-12" type="button" value="+ Add Qualification"/>
+							</div>
+							<div id="MENU_PROFILE_COMPANY" class="col-xs-12">
+								<span class="col-xs-12 profile_label">Company Name:</span>
+								<input id="PROFILE_Name" class="col-xs-12" type="text" placeholder="Company name..."/>
+								<span class="col-xs-12 profile_label">Street Address:</span>
+								<input id="PROFILE_Street" class="col-xs-12" type="text" placeholder="Street address..."/>
+								<span class="col-xs-12 profile_label">City:</span>
+								<input id="PROFILE_City" class="col-xs-12" type="text" placeholder="City..."/>
+								<span class="col-xs-12 profile_label">Country:</span>
+								<input id="PROFILE_Country" class="col-xs-12" type="text" placeholder="Country..."/>
+							</div>
+						</section>
+						<section class="profile_submission">
+							<input id="PROFILE_Submit" class="btn btn-success col-xs-12" type="button" value="Submit"/>
+						</section>
+					</div>
+				</section>
+				<section class="col-xs-2"></section>
+			</div>
+			<!--
+				Page:			LANDING
+				Description:
+					This is the LANDING page of the application. This page contains most of the application's functionality, containing the necessary 
+					links to different views, depending on the user type. There are 
+					three types of LANDING pages: USER, INSTRUCTOR, and COMPANY.
+			-->
+			<div id="PAGE_LANDING">
+				<!--
+					Page Division:		USER
+					Description:
+						This is the USER division for USER-type users. This division 
+						contains all of the functionality and utilities that are used 
+						by USER users.
+				-->
+				<div id="LANDING_USER">
+				</div>
+				<!--
+					Page Division:		INSTRUCTOR
+					Description:
+						This is the INSTRUCTOR division for INSTRUCTOR-type users. This 
+						division contains all of the functionality and utilities that are used by INSTRUCTOR users.
+				-->
+				<div id="LANDING_INSTRUCTOR">
+				</div>
+				<!--
+					Page Division:		COMPANY
+					Description:
+						This is the LANDING division for COMPANY-type users. This division contains all of the functionality and utilities that 
+						are used by COMPANY users.
+				-->
+				<div id="LANDING_COMPANY">
+				</div>
+			</div>
+		</section>
+		<div id="ERROR_CARD_BASIC" class="col-xs-8">
+			<div class="row">
+				<div>
+					<div class="card blue-grey lighten-4">
+						<div class="card-content">
+							<span class="card-title">
+								<h3 id="CARD_BASIC_TITLE">Example</h3>
+							</span>
+							<p id="CARD_BASIC_CONTENT">Example Content</p>
+						</div>
+						<div class="card-action">
+							<input id="CARD_BASIC_OK" class="btn waves-effect waves-light blue-grey" value="OK"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

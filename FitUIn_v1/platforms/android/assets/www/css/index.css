@@ -1,0 +1,159 @@
+/*
+	CSS for html tag
+*/
+html{
+	height: 100%;
+}
+
+/*
+	CSS for body tag
+*/
+body{
+	display: inline-block;
+	padding: 0px;
+	background-color: #f2f8ff;
+}
+body .input_error_message{
+	display: none;
+	color: red;
+	padding: 0px;
+}
+
+/*
+	CSS for section DOCUMENT_HEADER
+*/
+#DOCUMENT_HEADER{
+	display: inline-block;
+	padding: 0px;
+	background-color: #3c8fe8;
+}
+#DOCUMENT_HEADER #HEADER_TITLE{
+	color: white;
+	text-align: center;
+	transform: translateY(-25%);
+}
+#DOCUMENT_HEADER #HEADER_REGISTRATION{
+	color: white;
+	cursor: pointer;
+	right: 0px;
+	height: 100%;
+	transform: translateY(25%);
+	text-align: right;
+	padding-right: 30px;
+}
+#DOCUMENT_HEADER #HEADER_REGISTRATION:hover{
+	color: black;
+	text-decoration: underline;
+}
+/*
+	CSS for section DOCUMENT_BODY
+*/
+#DOCUMENT_BODY{
+	display: inline-block;
+	padding: 0px;
+}
+/*
+	CSS for page PAGE_DEFAULT
+*/
+#PAGE_DEFAULT{
+	display: inline-block;
+}
+/*
+	CSS for page PAGE_LOGIN
+*/
+#PAGE_LOGIN{
+	display: none;
+}
+#PAGE_LOGIN #LOGIN_MENU{
+	transform: translateY(25%);
+	background-color:white;
+	border-radius: 10px;
+	padding-bottom: 10px;
+}
+#LOGIN_MENU .login_upper{}
+#LOGIN_MENU .login_lower{}
+#LOGIN_MENU #LOGIN_Submit{}
+
+/*
+	CSS for page PAGE_PROFILE_SETUP
+*/
+#PAGE_PROFILE_SETUP{
+	display: none;
+}
+#PAGE_PROFILE_SETUP #PROFILE_SETUP_MENU{
+	transform: translateY(5%);
+	background-color: white;
+	border-radius: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+#PROFILE_SETUP_MENU #SETUP_MENU_ACCOUNT{}
+#SETUP_MENU_ACCOUNT .account_label{
+	padding: 0px;
+	padding-top: 10px;
+}
+#SETUP_MENU_ACCOUNT #ACCOUNT_NameFirst{
+	width: 50%;
+}
+#SETUP_MENU_ACCOUNT #ACCOUNT_NameLast{
+	width: 50%;
+}
+#SETUP_MENU_ACCOUNT #ACCOUNT_Gender{
+	margin-bottom: 10px;
+}
+#SETUP_MENU_ACCOUNT #ACCOUNT_Type{
+	margin-bottom: 10px;
+}
+#PROFILE_SETUP_MENU #SETUP_MENU_PROFILE{
+	display: none;
+}
+#SETUP_MENU_PROFILE .profile_label{
+	padding: 0px;
+	padding-top: 10px;
+}
+#SETUP_MENU_PROFILE #MENU_PROFILE_USER{
+	display: none;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+#SETUP_MENU_PROFILE #MENU_PROFILE_INSTRUCTOR{
+	display: none;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+#MENU_PROFILE_INSTRUCTOR #PROFILE_Description{
+	resize: none;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+#SETUP_MENU_PROFILE #MENU_PROFILE_COMPANY{
+	display: none;
+}
+
+/*
+	CSS for page PAGE_LANDING
+*/
+#PAGE_LANDING{
+	display: none;
+}
+
+/*
+	CSS for ERROR_CARD_BASIC
+*/
+#ERROR_CARD_BASIC{
+	display: none;
+	position: fixed;
+	transform: translateY(25%);
+	transform: translateX(25%);
+}
+
+
+#login_createAccount{
+	cursor:pointer;
+	color:blue;
+	text-decoration:underline;
+}
+#login_createAccount:hover{
+	text-decoration:none;
+	text-shadow:1px 1px 1px #555;
+}
